@@ -56,73 +56,6 @@ Follow these steps to install and run the DHIS2 Dashboard Viewer:
 4. Start the development server:
 
    ```bash
-  npm start
-
-## Configuration
-
-The DHIS2 Dashboard Viewer can be configured using environment variables or configuration files. You can customize the following:
-
-### Environment Variables
-
-You can define environment variables to configure API endpoints.
-    # DHIS2 Dashboard Viewer
-
-This is a React application that fetches and displays a list of dashboards available to a DHIS2 user. It allows you to view details of each dashboard and its items, filter dashboard items by type, and star your favorite dashboards.
-
-## Table of Contents
-
-- [Features](#features)
-- [Demo](#demo)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Configuration](#configuration)
-- [Folder Structure](#folder-structure)
-- [Testing](#testing)
-## Features
-
-- Fetch and display a list of dashboards.
-- Expand/collapse dashboard cards.
-- View dashboard details and dashboard items.
-- Filter dashboard items by type (e.g., visualization, map, text).
-- Star your favorite dashboards.
-- Persist starred dashboard states on reload.
-
-## Demo
-
-A live demo of the DHIS2 Dashboard Viewer is available at [Demo Link](https://6548d5f2f8dab403ac10bfd6--eloquent-mandazi-57f8f2.netlify.app/).
-
-## Getting Started
-
-### Prerequisites
-
-To run the DHIS2 Dashboard Viewer on your local machine, you need to have the following software and tools installed:
-
-- Node.js (version x.x.x)
-- npm (version x.x.x)
-
-### Installation
-
-Follow these steps to install and run the DHIS2 Dashboard Viewer:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/Chisomchima/dhis2-project
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd dhis2-dashboard-viewer
-
-3. Install dependencies:
-
-   ```bash
-   npm install
-
-4. Start the development server:
-
-   ```bash
     npm start
 
 ## Configuration
@@ -171,4 +104,5 @@ The project is organized with the following folder structure:
 
 I have included tests for the components in the src/tests directory. You can run tests using the following command:
 
-npm test.
+   ```bash
+    npm test
