@@ -95,7 +95,7 @@ Feel free to explore the source code and make modifications as needed.
 
 ## Testing
 
-I have included tests for the components in the src/tests directory. You can run tests using the following command:
+I have included tests for the components in the src/test directory. You can run tests using the following command:
 
 ```bash
  npm test
