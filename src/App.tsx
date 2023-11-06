@@ -48,7 +48,8 @@ function App() {
     } else {
       getDashboards();
     }
-  }, [dashboardData]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="App" data-testid="dashboard">

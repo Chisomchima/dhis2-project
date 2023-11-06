@@ -50,6 +50,7 @@ function FilterHeader({
       }
     };
     filterFunction();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedItemType, resolvedData]);
 
   return (

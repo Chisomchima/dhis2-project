@@ -70,6 +70,7 @@ function Accordion({
         setDashboardData();
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dashboards]);
 
   const handleFill = (index: number, starred: boolean) => {
