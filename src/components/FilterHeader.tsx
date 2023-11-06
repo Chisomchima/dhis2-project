@@ -58,7 +58,7 @@ function FilterHeader({
   }, [selectedItemType, resolvedData]);
 
   return (
-    <div className="filter pt-2">
+    <div className="filter pt-4">
       <h2 className="font-bold">Dashboards</h2>
       <span className="w-[200px] p-2">
         <Select

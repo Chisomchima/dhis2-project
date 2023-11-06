@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import HeroBanner from "./components/Banner";
 import FilterHeader from "./components/FilterHeader";
 import AccordionData from "./components/Accordion";
 import DashbordService from "./service";
@@ -28,10 +29,14 @@ function App() {
         const response = await DashbordService.getDashboards();
 
         // Fetch details for each dashboard
-        const dashboardDetails = response?.dashboards?.map(async (dashboard) => {
-          const detail = await DashbordService.getDashboardDetail(dashboard.id);
-          return detail;
-        });
+        const dashboardDetails = response?.dashboards?.map(
+          async (dashboard) => {
+            const detail = await DashbordService.getDashboardDetail(
+              dashboard.id
+            );
+            return detail;
+          }
+        );
 
         // Resolve details for all dashboards
         const resolvedData = await Promise.all(dashboardDetails);
@@ -74,6 +79,7 @@ function App() {
           ></div>
         </div>
       )}
+      <HeroBanner />
       <div className="wrapper">
         {/* Render the FilterHeader component */}
         <FilterHeader
