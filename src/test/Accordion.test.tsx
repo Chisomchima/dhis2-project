@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import Accordion from "../components/Accordion";
 
@@ -22,6 +21,8 @@ const localStorageMock = (function () {
 })();
 
 Object.defineProperty(window, "localStorage", { value: localStorageMock });
+// Mock function for setUseLocalStorage
+const setUseLocalStorage = jest.fn();
 
 describe("Accordion Component", () => {
   // Create a mock dashboards data for testing
@@ -49,14 +50,10 @@ describe("Accordion Component", () => {
         setUseLocalStorage={() => {}}
       />
     );
-
-    // Assert that the component rendered correctly
     expect(screen.getByText("Dashboard 1")).toBeInTheDocument();
   });
 
   test("toggles the first star and active states when icons are clicked", () => {
-    const handleFill = jest.fn();
-    const handleActive = jest.fn();
 
     render(
         <Accordion
@@ -70,19 +67,28 @@ describe("Accordion Component", () => {
     const activeStarIcon = screen.queryByTestId("active-star-icon-0");
     const activeIcon = screen.queryByTestId("active-icon-0");
 
-    // const activeStarIcon2 = screen.getByTestId("active-star-icon-0");
-    // const activeIcon2 = screen.getByTestId("active-icon-0");
-
     expect(activeStarIcon).toBeInTheDocument();
     expect(activeIcon).toBeInTheDocument();
 
-    // // Click the star icon to toggle
-    // fireEvent.click(activeStarIcon2);
-    // expect(handleFill).toHaveBeenCalledWith(0, false);
+  });
 
+  test("toggles the star and active states for multiple dashboards", () => {
+    render(<Accordion dashboards={dashboards} useLocalStorage={true} setUseLocalStorage={setUseLocalStorage} />);
+    
+    // Get the star and active icons for both dashboards
+    const activeIcon1 = screen.getByTestId("active-icon-0");
+    const starIcon2 = screen.getByTestId("star-icon-1");
+  
+    // Click the star icon for the second dashboard
+    fireEvent.click(starIcon2);
 
-    // fireEvent.click(activeIcon2);
-    // expect(handleActive).toHaveBeenCalledWith(0, false);
+    // Verify that the setUseLocalStorage function was called with the updated state
+    expect(setUseLocalStorage).toHaveBeenCalledWith(true);
+    expect(setUseLocalStorage).toHaveBeenCalledWith(true);
 
+    fireEvent.click(activeIcon1);
+    expect(setUseLocalStorage).toHaveBeenCalledWith(true);
+    expect(setUseLocalStorage).toHaveBeenCalledWith(true);
   });
 });
+

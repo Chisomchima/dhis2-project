@@ -76,7 +76,7 @@ function App() {
         />
       </div>
       {error && (
-        <Alert color="failure" icon={HiInformationCircle}>
+        <Alert color="failure" icon={HiInformationCircle} role="alert">
           <span className="font-medium" data-testid="error-message">
             Something went wrong
           </span>{" "}

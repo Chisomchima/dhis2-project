@@ -80,20 +80,4 @@ describe("App component", () => {
       expect(dashboardDetail).toBeInTheDocument();
     });
   });
-
-  // test("renders an error message on API failure", async () => {
-  //   // Intercept the network request and provide a mock response
-  //   nock("https://gist.githubusercontent.com")
-  //     .get(
-  //       "/kabaros/da79636249e10a7c991a4638205b1726/raw/fa044f54e7a5493b06bb51da40ecc3a9cb4cd3a5/dashboards.json"
-  //     )
-  //     .reply(500, "Internal Server Error"); // Mock response for a 500 error
-
-  //   render(<App />);
-
-  //   await waitFor(() => {
-  //     const errorMessage = screen.getByTestId("error-message");
-  //     expect(errorMessage).toBeInTheDocument();
-  //   });
-  // });
 });
