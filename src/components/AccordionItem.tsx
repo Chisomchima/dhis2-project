@@ -42,7 +42,7 @@ function AccordionView({ data, index, handleFill, handleActive }: AccordionViewP
   return (
     <div
       className={`shadow my-2 w-full  bg-white ${
-        data?.isActive ? "border border-[cyan]" : ""
+        data?.isActive ? "border border-indigo-500" : ""
       }`}
     >
       <div className="flex items-center justify-between w-full p-3 mb-3">

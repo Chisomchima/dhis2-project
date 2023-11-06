@@ -1,3 +1,4 @@
+import React from 'react';
 import { IoStatsChartSharp } from 'react-icons/io5';
 
 const HeroBanner = () => {
@@ -13,7 +14,8 @@ const HeroBanner = () => {
             </button>
           </div>
           <div className="md:w-1/2 mt-6 md:mt-0 flex items-center justify-end">
-            <IoStatsChartSharp style={{ fontSize: "12rem" }} className="hidden md:block" />
+            {/* Add responsive classes to hide/show the logo */}
+            <IoStatsChartSharp style={{ fontSize: "12rem" }} className="hidden md:block" data-testid="logo" />
           </div>
         </div>
       </div>
