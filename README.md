@@ -1,46 +1,174 @@
-# Getting Started with Create React App
+# DHIS2 Dashboard Viewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React application that fetches and displays a list of dashboards available to a DHIS2 user. It allows you to view details of each dashboard and its items, filter dashboard items by type, and star your favorite dashboards.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Demo](#demo)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Configuration](#configuration)
+- [Folder Structure](#folder-structure)
+- [Testing](#testing)
+## Features
 
-### `npm start`
+- Fetch and display a list of dashboards.
+- Expand/collapse dashboard cards.
+- View dashboard details and dashboard items.
+- Filter dashboard items by type (e.g., visualization, map, text).
+- Star your favorite dashboards.
+- Persist starred dashboard states on reload.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Demo
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+A live demo of the DHIS2 Dashboard Viewer is available at [Demo Link](https://6548d5f2f8dab403ac10bfd6--eloquent-mandazi-57f8f2.netlify.app/).
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+To run the DHIS2 Dashboard Viewer on your local machine, you need to have the following software and tools installed:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (version x.x.x)
+- npm (version x.x.x)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Follow these steps to install and run the DHIS2 Dashboard Viewer:
 
-### `npm run eject`
+1. Clone the repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   ```bash
+   git clone https://github.com/Chisomchima/dhis2-project
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Navigate to the project directory:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   ```bash
+   cd dhis2-dashboard-viewer
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Install dependencies:
 
-## Learn More
+   ```bash
+   npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Start the development server:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+  npm start
+
+## Configuration
+
+The DHIS2 Dashboard Viewer can be configured using environment variables or configuration files. You can customize the following:
+
+### Environment Variables
+
+You can define environment variables to configure API endpoints.
+    # DHIS2 Dashboard Viewer
+
+This is a React application that fetches and displays a list of dashboards available to a DHIS2 user. It allows you to view details of each dashboard and its items, filter dashboard items by type, and star your favorite dashboards.
+
+## Table of Contents
+
+- [Features](#features)
+- [Demo](#demo)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Configuration](#configuration)
+- [Folder Structure](#folder-structure)
+- [Testing](#testing)
+## Features
+
+- Fetch and display a list of dashboards.
+- Expand/collapse dashboard cards.
+- View dashboard details and dashboard items.
+- Filter dashboard items by type (e.g., visualization, map, text).
+- Star your favorite dashboards.
+- Persist starred dashboard states on reload.
+
+## Demo
+
+A live demo of the DHIS2 Dashboard Viewer is available at [Demo Link](https://6548d5f2f8dab403ac10bfd6--eloquent-mandazi-57f8f2.netlify.app/).
+
+## Getting Started
+
+### Prerequisites
+
+To run the DHIS2 Dashboard Viewer on your local machine, you need to have the following software and tools installed:
+
+- Node.js (version x.x.x)
+- npm (version x.x.x)
+
+### Installation
+
+Follow these steps to install and run the DHIS2 Dashboard Viewer:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Chisomchima/dhis2-project
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd dhis2-dashboard-viewer
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+
+4. Start the development server:
+
+   ```bash
+  npm start
+
+## Configuration
+
+The DHIS2 Dashboard Viewer can be configured using environment variables or configuration files. You can customize the following:
+
+### Environment Variables
+
+You can define environment variables to configure API endpoints.
+
+ - REACT_APP_BASE_URL=https://gist.githubusercontent.com/kabaros/da79636249e10a7c991a4638205b1726/raw/fa044f54e7a5493b06bb51da40ecc3a9cb4cd3a5
+
+
+
+## Folder Structure
+
+The project is organized with the following folder structure:
+
+- `src/`: Contains the main source code for the DHIS2 Dashboard Viewer.
+  - `components/`: React components used in the application.
+  - `service.ts`: API service for fetching dashboard data.
+  - `utils/`: Utility files including interfaces and constants.
+  - `test/`: Tests for the application.
+- `public/`: Contains public assets and the `index.html` file.
+- `node_modules/`: Node.js modules and dependencies.
+- `package.json`: Project configuration and dependencies.
+- `README.md`: This documentation.
+
+Feel free to explore the source code and make modifications as needed.
+
+## Folder Structure
+
+The project is organized with the following folder structure:
+
+- `src/`: Contains the main source code for the DHIS2 Dashboard Viewer.
+  - `components/`: React components used in the application.
+  - `service.ts`: API service for fetching dashboard data.
+  - `utils/`: Utility files including interfaces and constants.
+- `public/`: Contains public assets and the `index.html` file.
+- `src/tests/`: Contains tests for components and utilities.
+- `node_modules/`: Node.js modules and dependencies.
+- `package.json`: Project configuration and dependencies.
+- `README.md`: This documentation.
+
+## Testing
+
+I have included tests for the components in the src/tests directory. You can run tests using the following command:
+
+npm test.
