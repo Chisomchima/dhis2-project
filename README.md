@@ -57,7 +57,6 @@ Follow these steps to install and run the DHIS2 Dashboard Viewer:
 
    ```bash
    npm install
-
    ```
 
 4. Start the development server:
@@ -74,7 +73,9 @@ The DHIS2 Dashboard Viewer can be configured using environment variables or conf
 
 You can define environment variables to configure API endpoints.
 
+```bash
 REACT_APP_BASE_URL=https://gist.githubusercontent.com/kabaros/da79636249e10a7c991a4638205b1726/raw/fa044f54e7a5493b06bb51da40ecc3a9cb4cd3a5
+```
 
 ## Folder Structure
 
@@ -98,4 +99,14 @@ I have included tests for the components in the src/tests directory. You can run
 
 ```bash
  npm test
+
 ```
+
+To check test coverage of the application run this command.
+
+```bash
+ npm run coverage
+
+```
+
+To see the ui of the test coverage you can open the [Test Coverage Link](http://127.0.0.1:5500/coverage/lcov-report/index.html) using live server.
