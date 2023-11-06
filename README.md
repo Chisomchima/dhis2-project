@@ -24,7 +24,7 @@ This is a React application that fetches and displays a list of dashboards avail
 
 ## Demo
 
-A live demo of the DHIS2 Dashboard Viewer is available at [Demo Link](https://6548d5f2f8dab403ac10bfd6--eloquent-mandazi-57f8f2.netlify.app/).
+A live demo of the DHIS2 Dashboard Viewer is available at [Demo Link](https://eloquent-mandazi-57f8f2.netlify.app/).
 
 ## Getting Started
 
