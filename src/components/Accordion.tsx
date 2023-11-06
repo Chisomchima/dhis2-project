@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import {
-  BsChevronUp,
-  BsChevronDown,
-  BsGlobeAmericas,
-  BsFileTextFill,
-} from "react-icons/bs";
-import { VscGraph } from "react-icons/vsc";
+import AccordionView from './AccordionItem'
 
 interface DashboardItem {
   type: string;
@@ -59,6 +52,7 @@ function Accordion({
               name: item?.visualization
               ? item?.visualization?.name
               : item?.text,
+              mapName: item?.map && item.map.name,
             })),
           };
         });
@@ -102,67 +96,7 @@ function Accordion({
   return (
     <div className="flex items-center flex-col w-[80%] my-3">
       {accordionData.map((data, i) => (
-        <div
-          key={i}
-          className={`shadow my-2 w-full  bg-white ${
-            data?.isActive ? "border border-[cyan]" : ""
-          }`}
-        >
-          <div className="flex items-center justify-between w-full p-3 mb-3">
-            <h3 className="font-bold ">{data?.displayName}</h3>
-            <div className="flex gap-3">
-              {data?.starred ? (
-                <AiFillStar
-                  style={{ color: "gold", cursor: "pointer" }}
-                  onClick={() => handleFill(i, false)}
-                />
-              ) : (
-                <AiOutlineStar
-                  style={{ color: "gold", cursor: "pointer" }}
-                  onClick={() => handleFill(i, true)}
-                  data-testid={`star-icon-${i}`}
-                />
-              )}
-              {data?.isActive ? (
-                <BsChevronUp
-                  data-testid={`active-icon-${i}`}
-                  style={{ cursor: "pointer" }}
-                  onClick={() => handleActive(i, false)}
-                />
-              ) : (
-                <BsChevronDown
-                  style={{ cursor: "pointer" }}
-                  onClick={() => handleActive(i, true)}
-                />
-              )}
-            </div>
-          </div>
-          <div
-            className={`transitioning-accordion ${
-              data?.isActive ? "active" : ""
-            }`}
-          >
-            {data?.details && data.details.length > 0 ? (
-              data.details.map((detail, j) => (
-                <div
-                  key={j}
-                  className="flex items-center gap-3 border-b my-2 p-3 w-full"
-                >
-                  <div className="flex">
-                    {detail?.type === "VISUALIZATION" && <VscGraph />}
-                    {detail?.type === "MAP" && <BsGlobeAmericas />}
-                    {detail?.type === "TEXT" && <BsFileTextFill />}
-                  </div>
-                  <h3>{detail?.name || detail?.mapName}</h3>
-                </div>
-              ))
-            ) : (
-              <h3 className="p-3">
-                No data to show for the selected visualization
-              </h3>
-            )}
-          </div>
-        </div>
+         <AccordionView data={data} index={i} handleFill={handleFill} handleActive={handleActive} key={i}/>
       ))}
     </div>
   );

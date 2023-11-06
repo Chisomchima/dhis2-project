@@ -8,8 +8,6 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.60",
-    "@types/react": "^18.2.34",
-    "@types/react-dom": "^18.2.14",
     "autoprefixer": "^10.4.16",
     "flowbite": "^2.0.0",
     "flowbite-react": "^0.6.4",
@@ -28,13 +26,24 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch:css": "postcss src/index.css -o src/tailwind.css"
+    "watch:css": "postcss src/index.css -o src/tailwind.css",
+    "coverage": "yarn test --coverage --watchAll --collectCoverageFrom='src/App.tsx'  --collectCoverageFrom='src/components/**/*.{ts,tsx}'"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 80, 
+        "functions": 80, 
+        "lines": 80,       
+        "statements": -10      
+      }
+    }
   },
   "browserslist": {
     "production": [
@@ -47,5 +56,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.35",
+    "@types/react-dom": "^18.2.14",
+    "nock": "^13.3.8"
   }
 }

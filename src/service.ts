@@ -14,7 +14,7 @@ class DashboardService {
       const response = await request("/dashboards.json", "GET");
       return response;
     } catch (error) {
-      throw error;
+      return error as DashboardsResponse;
     }
   }
   
@@ -30,7 +30,7 @@ class DashboardService {
       const response = await request(`/${id}.json`, "GET");
       return response;
     } catch (error) {
-      throw error;
+      return error as DashboardDetail;
     }
   }
 }

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import FilterHeader from "./components/FilterHeader";
 import AccordionData from "./components/Accordion";
 import DashbordService from "./service";
+import { HiInformationCircle } from "react-icons/hi";
+import { Alert } from "flowbite-react";
 
 function App() {
   const [dashboards, setDashboards] = useState<any[]>([]);
@@ -40,16 +42,13 @@ function App() {
         setLoading(false);
       }
     };
-    if (useLocalStorage) {
-      if (dashboardData && dashboardData && dashboardData.length > 0) {
-        return;
-      } else {
-        getDashboards();
-      }
+
+    if (dashboardData && dashboardData.length > 0) {
+      return;
     } else {
       getDashboards();
     }
-  }, [useLocalStorage, dashboardData]);
+  }, [dashboardData]);
 
   return (
     <div className="App" data-testid="dashboard">
@@ -76,10 +75,12 @@ function App() {
         />
       </div>
       {error && (
-        <div>
-          <span className="font-medium">Something went wrong</span> try
-          refreshing again.
-        </div>
+        <Alert color="failure" icon={HiInformationCircle}>
+          <span className="font-medium" data-testid="error-message">
+            Something went wrong
+          </span>{" "}
+          try refreshing again.
+        </Alert>
       )}
     </div>
   );
