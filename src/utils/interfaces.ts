@@ -69,3 +69,28 @@ export interface Visualization {
   export interface DashboardDetailResponse {
     dashboards: DashboardDetail[];
   }
+
+  export interface DashboardItemDetail {
+    type: string;
+    visualization?: {
+      type: string;
+      name: string;
+    };
+    name?: string;
+    mapName?: string;
+    text?: {
+      name: string;
+    };
+    map?: {
+      name: string;
+    };
+  }
+  // import { AccordionData} from '../utils/interfaces'
+  
+  export interface AccordionData {
+    displayName: string;
+    starred: boolean;
+    isActive: boolean;
+    details: DashboardItem[];
+  }
+  

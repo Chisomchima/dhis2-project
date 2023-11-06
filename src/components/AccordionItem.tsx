@@ -8,7 +8,6 @@ import {
 } from "react-icons/bs";
 import { VscGraph } from "react-icons/vsc";
 
-
 interface DashboardItem {
   type: string;
   visualization?: {
@@ -34,7 +33,7 @@ interface AccordionData {
 
 interface AccordionViewProps {
   data: AccordionData;
-  index: number; 
+  index: number;
   handleFill: (index: number, starred: boolean) => void;
   handleActive: (index: number, isActive: boolean) => void;
 }
@@ -47,18 +46,18 @@ function AccordionView({ data, index, handleFill, handleActive }: AccordionViewP
       }`}
     >
       <div className="flex items-center justify-between w-full p-3 mb-3">
-        <h3 className="font-bold ">{data?.displayName}</h3>
+        <h3 className="font-bold">{data?.displayName}</h3>
         <div className="flex gap-3">
           {data?.starred ? (
             <AiFillStar
               style={{ color: "gold", cursor: "pointer" }}
-              onClick={() => handleFill(index, false)} 
+              onClick={() => handleFill(index, false)}
               data-testid={`active-star-icon-${index}`}
             />
           ) : (
             <AiOutlineStar
               style={{ color: "gold", cursor: "pointer" }}
-              onClick={() => handleFill(index, true)} 
+              onClick={() => handleFill(index, true)}
               data-testid={`star-icon-${index}`}
             />
           )}
@@ -66,7 +65,7 @@ function AccordionView({ data, index, handleFill, handleActive }: AccordionViewP
             <BsChevronUp
               data-testid={`active-icon-${index}`}
               style={{ cursor: "pointer" }}
-              onClick={() => handleActive(index, false)} 
+              onClick={() => handleActive(index, false)}
             />
           ) : (
             <BsChevronDown
@@ -87,11 +86,11 @@ function AccordionView({ data, index, handleFill, handleActive }: AccordionViewP
               className="flex items-center gap-3 border-b my-2 p-3 w-full"
             >
               <div className="flex">
-                {detail?.type === "VISUALIZATION" && <VscGraph />}
-                {detail?.type === "MAP" && <BsGlobeAmericas />}
-                {detail?.type === "TEXT" && <BsFileTextFill />}
+                {detail?.type === "VISUALIZATION" && <VscGraph />} {/* Visualizations icon */}
+                {detail?.type === "MAP" && <BsGlobeAmericas />} {/* Map icon */}
+                {detail?.type === "TEXT" && <BsFileTextFill />} {/* Text icon */}
               </div>
-              <h3>{detail?.name || detail?.mapName}</h3>
+              <h3>{detail?.name || detail?.mapName}</h3> {/* Display name or map name */}
             </div>
           ))
         ) : (

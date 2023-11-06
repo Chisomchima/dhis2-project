@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
-import AccordionView from './AccordionItem'
+import AccordionView from "./AccordionItem"; // Import the AccordionView component
 
+// Define the DashboardItem and AccordionData interfaces
 interface DashboardItem {
   type: string;
   visualization?: {
@@ -25,8 +26,9 @@ interface AccordionData {
   details: DashboardItem[];
 }
 
+// Define the AccordionProps interface
 interface AccordionProps {
-  dashboards: any[]; // Adjust the type according to your actual data structure
+  dashboards: any[];
   useLocalStorage: boolean;
   setUseLocalStorage: (value: boolean) => void;
 }
@@ -36,7 +38,7 @@ function Accordion({
   useLocalStorage,
   setUseLocalStorage,
 }: AccordionProps) {
-  const [accordionData, setAccordionData] = useState<AccordionData[]>([]);
+  const [accordionData, setAccordionData] = useState<AccordionData[]>([]); // State for storing accordion data
   const storedData = localStorage.getItem("accordionData");
 
   useEffect(() => {
@@ -50,8 +52,8 @@ function Accordion({
             details: dashboard?.dashboardItems?.map((item: DashboardItem) => ({
               type: item?.type,
               name: item?.visualization
-              ? item?.visualization?.name
-              : item?.text,
+                ? item?.visualization?.name
+                : item?.text,
               mapName: item?.map && item.map.name,
             })),
           };
@@ -97,7 +99,13 @@ function Accordion({
   return (
     <div className="flex items-center flex-col w-[80%] my-3">
       {accordionData.map((data, i) => (
-         <AccordionView data={data} index={i} handleFill={handleFill} handleActive={handleActive} key={i}/>
+        <AccordionView
+          data={data}
+          index={i}
+          handleFill={handleFill}
+          handleActive={handleActive}
+          key={i}
+        />
       ))}
     </div>
   );

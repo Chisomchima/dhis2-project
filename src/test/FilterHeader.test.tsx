@@ -124,8 +124,6 @@ describe("FilterHeader Component", () => {
     expect(localStorageMock.getItem("selectedDashboards")).toEqual(JSON.stringify(expectedData));
   });
 
-  // Add similar tests for other item types
-
   // Test with Different ResolvedData Values
   test("handles resolvedData with multiple dashboards", () => {
     const setDashboardsMock = jest.fn();

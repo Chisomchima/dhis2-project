@@ -13,12 +13,15 @@ function FilterHeader({
   setUseLocalStorage,
   resolvedData,
 }: FilterHeaderProps) {
-
+  // Retrieve the selected item type from localStorage
   let selected = localStorage.getItem("selectedItem");
+
+  // Initialize selected item type with the stored value or "ALL"
   const [selectedItemType, setSelectedItemType] = useState<string>(
     selected ? JSON.parse(selected) : "ALL"
   );
 
+  // Handle the item type change
   const handleItemTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedItemType(e.target.value);
     localStorage.setItem("selectedItem", JSON.stringify(e.target.value));
@@ -26,6 +29,7 @@ function FilterHeader({
   };
 
   useEffect(() => {
+    // Function to filter dashboards based on the selected item type
     const filterFunction = () => {
       if (resolvedData) {
         const dashboardData = JSON.parse(resolvedData);
@@ -50,7 +54,7 @@ function FilterHeader({
       }
     };
     filterFunction();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedItemType, resolvedData]);
 
   return (
