@@ -123,7 +123,7 @@ Follow these steps to install and run the DHIS2 Dashboard Viewer:
 4. Start the development server:
 
    ```bash
-  npm start
+    npm start
 
 ## Configuration
 
