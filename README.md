@@ -12,6 +12,7 @@ This is a React application that fetches and displays a list of dashboards avail
 - [Configuration](#configuration)
 - [Folder Structure](#folder-structure)
 - [Testing](#testing)
+
 ## Features
 
 - Fetch and display a list of dashboards.
@@ -43,20 +44,27 @@ Follow these steps to install and run the DHIS2 Dashboard Viewer:
    ```bash
    git clone https://github.com/Chisomchima/dhis2-project
 
+   ```
+
 2. Navigate to the project directory:
 
    ```bash
-   cd dhis2-dashboard-viewer
+   cd dhis2-project
+
+   ```
 
 3. Install dependencies:
 
    ```bash
    npm install
 
+   ```
+
 4. Start the development server:
 
    ```bash
     npm start
+   ```
 
 ## Configuration
 
@@ -66,9 +74,8 @@ The DHIS2 Dashboard Viewer can be configured using environment variables or conf
 
 You can define environment variables to configure API endpoints.
 
- - REACT_APP_BASE_URL=https://gist.githubusercontent.com/kabaros/da79636249e10a7c991a4638205b1726/raw/fa044f54e7a5493b06bb51da40ecc3a9cb4cd3a5
-
-
+    ```bash
+    REACT_APP_BASE_URL=https://gist.githubusercontent.com/kabaros/da79636249e10a7c991a4638205b1726/raw/fa044f54e7a5493b06bb51da40ecc3a9cb4cd3a5
 
 ## Folder Structure
 
@@ -86,23 +93,10 @@ The project is organized with the following folder structure:
 
 Feel free to explore the source code and make modifications as needed.
 
-## Folder Structure
-
-The project is organized with the following folder structure:
-
-- `src/`: Contains the main source code for the DHIS2 Dashboard Viewer.
-  - `components/`: React components used in the application.
-  - `service.ts`: API service for fetching dashboard data.
-  - `utils/`: Utility files including interfaces and constants.
-- `public/`: Contains public assets and the `index.html` file.
-- `src/tests/`: Contains tests for components and utilities.
-- `node_modules/`: Node.js modules and dependencies.
-- `package.json`: Project configuration and dependencies.
-- `README.md`: This documentation.
-
 ## Testing
 
 I have included tests for the components in the src/tests directory. You can run tests using the following command:
 
-   ```bash
-    npm test
+```bash
+ npm test
+```
