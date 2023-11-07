@@ -1,6 +1,6 @@
 # DHIS2 Dashboard Viewer
 
-This is a React application that fetches and displays a list of dashboards available to a DHIS2 user. It allows you to view details of each dashboard and its items, filter dashboard items by type, and star your favorite dashboards.
+This is a React and TypeScript application that fetches and displays a list of dashboards available to a DHIS2 user. It allows you to view details of each dashboard and its items, filter dashboard items by type, and star your favorite dashboards.
 
 ## Table of Contents
 
@@ -32,8 +32,8 @@ A live demo of the DHIS2 Dashboard Viewer is available at [Demo Link](https://el
 
 To run the DHIS2 Dashboard Viewer on your local machine, you need to have the following software and tools installed:
 
-- Node.js (version x.x.x)
-- npm (version x.x.x)
+- Node.js (version > 16)
+- npm (8.19.4)
 
 ### Installation
 
